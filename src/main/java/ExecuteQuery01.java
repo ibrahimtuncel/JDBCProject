@@ -25,6 +25,7 @@ public class ExecuteQuery01 {
             System.out.println(rs1.getString(1));
         }
         //2. orn: "region_id'nin 2'den buyuk oldugu "country_id" ve "country_name" degerlerini cagirin
+        String sql3="select * from countries";
         String sql2="SELECT country_id,country_name from countries where region_id>2";
         boolean sonuc2=st.execute(sql2);
         System.out.println("sonuc2 = " + sonuc2);
@@ -36,6 +37,20 @@ public class ExecuteQuery01 {
             String b=rs2.getString(2);//String b= rs2.getString("country_name");
             String c= rs2.getString("country_name");
             System.out.println(a+"-"+b+" :"+c);
+            }
+
+        ResultSet rs3=st.executeQuery(sql3);
+        while(rs3.next()){
+            int d=rs3.getInt("region_id");
+            System.out.println("id:"+d);
+        }
+
+       //3. orn: "number_of_employees" degeri en dusuk olan satirin tum degerlerini yazdirin.
+        String sql4="select * FROM companies where number_of_employees=10000";
+        String sql4a="select * FROM companies where number_of_employees=(select min(number_of_employees) from companies)";
+        ResultSet rs4=st.executeQuery(sql4a);
+        while(rs4.next()){
+            System.out.println(rs4.getInt(1)+" -"+rs4.getString(2)+" -"+rs4.getInt(3));
         }
 
         con.close();

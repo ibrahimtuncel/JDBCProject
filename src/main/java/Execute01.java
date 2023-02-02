@@ -16,7 +16,7 @@ public class Execute01 {
         //4. adım RessultSet sorgu querry olustur
         //1: Ornek: "workers" adinda bir table olusturup "worker_id, worker_name, worker_salary" sutunlarini ekleyin
         boolean sql1=st.execute("Create Table workers(worker_id VARCHAR(20),worker_name VARCHAR(20), worker_salary INT)");
-       System.out.println("sql1 = " + sql1);//false döner cunku data cagirmadık
+        System.out.println("sql1 = " + sql1);//false döner cunku data cagirmadık
         /*
         execute() metotunu DDL- data definition language-(create,drop,alter table)data tanımlama yaparken
         ve DQL data querry language (select) icin kullanılır.
