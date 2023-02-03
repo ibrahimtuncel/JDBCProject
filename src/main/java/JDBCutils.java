@@ -31,6 +31,8 @@ public class JDBCutils {
         }
         return connection;
     }
+
+    //3. adım statement olustur
     public static Statement createStatement(){
         try {
             statement=connection.createStatement();

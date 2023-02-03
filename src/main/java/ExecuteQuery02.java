@@ -13,7 +13,7 @@ public class ExecuteQuery02 {
         System.out.println("Connection basarili");
 
 //1. ornek: companies tablosundan en yuksek ikinci number_of_employees degeri olanin company ve number_of_employees degerlerini yazdirin
-    String sql1="Select company_id, company, number_of_employees From companies Order By number_of_employees DESC Offset 1 Row Fetch Next Row Only";
+    String sql1="Select * From companies Order By number_of_employees DESC Offset 1 Row Fetch Next Row Only";
         ResultSet rs1=st.executeQuery(sql1);
         while (rs1.next()){
         String a= rs1.getString(1);

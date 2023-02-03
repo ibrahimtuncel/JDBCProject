@@ -16,7 +16,7 @@ public class ExecuteUpdate01 {
      String sql1="update companies set number_of_employees='19000'\n" +
              "\twhere number_of_employees<(select avg (number_of_employees)from companies)";
      int updateSatirSayisi=st.executeUpdate(sql1);
-        System.out.println(updateSatirSayisi);
+        System.out.println("update edilen veri sayisi:"+updateSatirSayisi);
 
         String sql1a="select * from companies";
         ResultSet rs1=st.executeQuery(sql1a);

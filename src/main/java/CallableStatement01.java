@@ -28,6 +28,9 @@ public class CallableStatement01 {
            //Returns Numeric language plpgsql>>> prodocure language postgre sql
         //2. adım fonksiyonu calistir
         st.execute(sql1);
+        //boolean create=st.execute(sql1);
+        //System.out.println(create);
+
         //3. adım funtion u cagir
         CallableStatement cs1=con.prepareCall("{?=call toplamaF(?,?)}");//ilk ?-parametre return type
         //4. adım Return icin registerOutParameter(),parametreler icin set()... methotu kullan
@@ -64,7 +67,7 @@ public class CallableStatement01 {
         //6.adım sonucu cagirmak icin return data type bakılır.
         BigDecimal sonuc=cs2.getBigDecimal(1);
         System.out.println("toplam:"+sonuc);
-        //System.out.println("%.4f",sonuc);
+        System.out.printf("%.4f",sonuc);
 
     }
 
